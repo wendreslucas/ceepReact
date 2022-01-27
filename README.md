@@ -1,6 +1,5 @@
-# Getting Started with Create React App
+# Aplicativo sendo desenvolvido a partir de cursos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
