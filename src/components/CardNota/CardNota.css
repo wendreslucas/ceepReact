@@ -1,5 +1,5 @@
 * {
-  background-color: black;
+  background-color: #20232a;
 }
 .card-nota {
   align-items: flex-start;
@@ -15,7 +15,7 @@
 
 .card-nota_cabecalho {
   align-items: center;
-  color: #fff;
+  color: black;
   display: flex;
   font-size: 1.1rem;
   justify-content: space-between;
@@ -24,10 +24,14 @@
 .card-nota_texto {
   margin-top: 8px;
   font-size: 1rem;
-  color: #fff;
+  color: black;
 }
 
 .card-nota_titulo {
   font-size: 1.2rem;
   margin-right: 12px;
+}
+
+.card-nota__delete {
+  cursor: pointer;
 }
