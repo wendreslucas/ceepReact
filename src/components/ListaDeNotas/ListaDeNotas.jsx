@@ -2,10 +2,22 @@ import React, { Component } from 'react'
 import CardNota from '../CardNota/CardNota.jsx'
 import './ListaDeNotas.css'
 class ListaDeNotas extends Component {
+  constructor() {
+    super()
+    this.state = { notas: [] }
+  }
+  componentDidMount() {
+    this.props.notas.inscrever(this.novasNotas.bind(this))
+  }
+
+  novasNotas(notas) {
+    this.setState({ ...this.state, notas })
+  }
+
   render() {
     return (
       <ul className="lista-notas">
-        {this.props.notas.map((nota, index) => {
+        {this.state.notas.map((nota, index) => {
           return (
             <li className="lista-notas_item" key={index}>
               <CardNota
