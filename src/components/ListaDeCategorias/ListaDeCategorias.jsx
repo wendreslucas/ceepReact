@@ -5,17 +5,21 @@ class ListaDeCategorias extends Component {
   constructor() {
     super()
     this.state = { categorias: [] }
+    this._novasCategorias = this._novasCategorias.bind(this)
   }
-
   componentDidMount() {
-    this.props.categorias.inscrever(this.novasCategorias.bind(this))
+    this.props.categorias.inscrever(this._novasCategorias)
   }
 
-  novasCategorias(categorias) {
+  componentWillUnmount() {
+    this.props.categorias.desinscrever(this._novasCategorias)
+  }
+
+  _novasCategorias(categorias) {
     this.setState({ ...this.state, categorias })
   }
 
-  handleEventoInput(e) {
+  _handleEventoInput(e) {
     if (e.key === 'Enter') {
       let valorCategoria = e.target.value
       this.props.adicionarCategoria(valorCategoria)
@@ -34,11 +38,11 @@ class ListaDeCategorias extends Component {
           })}
         </ul>
         <input
-          onKeyUp={this.handleEventoInput.bind(this)}
           type="text"
           className="lista-categorias_input"
-          placeholder="Categorias"
-        ></input>
+          placeholder="Adicionar Categoria"
+          onKeyUp={this._handleEventoInput.bind(this)}
+        />
       </section>
     )
   }

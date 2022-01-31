@@ -13,27 +13,6 @@ class App extends Component {
     this.notas = new ArrayDeNotas()
   }
 
-  // criarNota(titulo, texto, categoria) {
-  //   const novaNota = { titulo, texto, categoria }
-  //   const novoArrayNotas = [...this.state.notas, novaNota]
-  //   const novoEstado = {
-  //     notas: novoArrayNotas
-  //   }
-  //   this.setState(novoEstado)
-  // }
-
-  // adicionarCategoria(nomeCategoria) {
-  //   const novoArrayCategorias = [...this.state.categorias, nomeCategoria]
-  //   const novoEstado = { ...this.state, categorias: novoArrayCategorias }
-  //   this.setState(novoEstado)
-  // }
-
-  // deletarNota(index) {
-  //   let arrayNotas = this.state.notas
-  //   arrayNotas.splice(index, 1)
-  //   this.setState({ nota: arrayNotas })
-  // }
-
   render() {
     return (
       <section className="conteudo">
@@ -58,4 +37,5 @@ class App extends Component {
   }
 }
 
+//new ListaDeNotas({notas:this.notas})
 export default App

@@ -1,7 +1,7 @@
 export default class ArrayDeNotas {
   constructor() {
     this.notas = []
-    this.inscritos = []
+    this._inscritos = []
   }
 
   adicionarNota(titulo, texto, categoria) {
@@ -16,11 +16,14 @@ export default class ArrayDeNotas {
   }
 
   inscrever(func) {
-    this.inscritos.push(func)
+    this._inscritos.push(func)
+  }
+  desinscrever(func) {
+    this._inscritos = this._inscritos.filter(f => f !== func)
   }
 
   notificar() {
-    this.inscritos.forEach(func => {
+    this._inscritos.forEach(func => {
       func(this.notas)
     })
   }
@@ -29,7 +32,7 @@ export default class ArrayDeNotas {
 class Nota {
   constructor(titulo, texto, categoria) {
     this.titulo = titulo
-    this.text = texto
+    this.texto = texto
     this.categoria = categoria
   }
 }
